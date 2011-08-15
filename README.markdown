@@ -18,7 +18,7 @@ Add box to *Vagrant*:
 
 Clone this configuration:
 
-    git clone git@github.com:K-Phoen/myVagrant.git
+    git clone git://github.com/K-Phoen/myVagrant.git
 
 And... Enjoy:
 
