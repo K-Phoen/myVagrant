@@ -3,6 +3,17 @@ class apache2 {
     ensure  => present,
   }
 
+  define sf_virtualhost ($host, $projectroot) {
+    file { "/etc/apache2/sites-available/${host}":
+      ensure  => file,
+      content => template("/vagrant/files/templates/sf_virtualhost.erb"),
+    }
+
+    apache2::site { "${host}":
+      name  => $host
+    }
+  }
+
   define site () {
     exec { "/usr/sbin/a2ensite $name":
       unless  => "/bin/readlink -e /etc/apache2/sites-enabled/$name",

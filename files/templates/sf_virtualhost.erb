@@ -1,0 +1,17 @@
+<VirtualHost *:80>
+  ServerName <%= host %>
+
+  DocumentRoot "<%= projectroot %>/web"
+  DirectoryIndex index.php
+
+  <Directory "<%= projectroot %>/web">
+    AllowOverride All
+    Allow from All
+  </Directory>
+
+  Alias /sf <%= projectroot %>/lib/vendor/symfony/data/web/sf
+  <Directory "<%= projectroot %>/lib/vendor/symfony/data/web/sf">
+    AllowOverride All
+    Allow from All
+  </Directory>
+</VirtualHost>

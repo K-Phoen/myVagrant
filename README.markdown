@@ -18,7 +18,7 @@ Add box to *Vagrant*:
 
 Clone this configuration:
 
-    git clone git://github.com/K-Phoen/myVagrant.git
+    git clone git@github.com:K-Phoen/myVagrant.git
 
 And... Enjoy:
 
@@ -27,9 +27,17 @@ And... Enjoy:
 
 In few minutes, you'll get a new virtual machine with *Debian Squeeze*, *Apache2*, *MySQL* (latest version),
 *PHP 5.3* (latest version), *Git*, and *Vim*.
+
 It configures *APT* to use the [Dotdeb](http://www.dotdeb.org/) repository.
-Apache2 is configured to use the `VirtualDocumentRoot` feature that allows you to fast create new vhosts.
-It also configures a user named `kevin` with [my dotfiles](https://github.com/K-Phoen/Config) for this user.
+Apache2 can either be configured to use the `VirtualDocumentRoot` feature
+(that allows you to "create" new vhosts on the fly) or with traditionnal
+vhosts.
+It also configures a user named `kevin` with [my dotfiles](https://github.com/K-Phoen/Config).
+
+The puppet manifests also come with a sample symfony project configuration.
+For this project, a LAMP environment is created, two databases are created and
+a git repository is cloned (which implies some dark stuff with SSH keys
+and known hosts).
 
 ## Credentials
 
