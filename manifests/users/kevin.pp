@@ -21,6 +21,11 @@ class kevin {
     key       => 'kphoen_dev_git_no_passphrase',
     require   => File["ssh_dir_${username}"],
   }
+  ssh_utils::key { "${username}_rsa_dev":
+    owner     => $username,
+    key       => 'id_rsa',
+    require   => File["ssh_dir_${username}"],
+  }
 
   package { ["exuberant-ctags", "zsh", "git", "vim"]:
     ensure  => latest,
