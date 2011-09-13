@@ -3,7 +3,7 @@ class apache2 {
     ensure  => present,
   }
 
-  define sf_virtualhost ($host, $projectroot) {
+  define sf_virtualhost ($host, $projectroot, $aliases=undef) {
     file { "/etc/apache2/sites-available/${host}":
       ensure  => file,
       content => template("/vagrant/files/templates/sf_virtualhost.erb"),

@@ -1,5 +1,8 @@
 <VirtualHost *:80>
   ServerName <%= host %>
+  <% if aliases %>
+    ServerAlias <%= aliases %>
+  <% end %>
 
   DocumentRoot "<%= projectroot %>/web"
   DirectoryIndex index.php
