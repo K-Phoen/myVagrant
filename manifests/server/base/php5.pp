@@ -15,5 +15,14 @@ class php5 {
     ]: ensure => present,
   }
 
+  file { "/etc/php5/cli/php.ini":
+    ensure  => file,
+    content => template("/vagrant/files/conf/cli_php.ini"),
+  }
+  file { "/etc/php5/apache2/php.ini":
+    ensure  => file,
+    content => template("/vagrant/files/conf/php.ini"),
+  }
+
   notice("Installing PHP")
 }
